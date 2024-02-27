@@ -21,4 +21,12 @@ public class HomePageActions {
         homePageLocators.paymentAndInfrastructure.click();
     }
 
+    public void clickOnFinancialStabilityLink(){
+        homePageLocators.financialStability.click();
+    }
+
+    public void clickOnHomeReserveBankLogo(){
+        homePageLocators.reserveBankOfAustraliaLogo.click();
+    }
+
 }

@@ -10,10 +10,9 @@ import static org.junit.Assert.*;
 
 public class APIAutomationSteps {
 
-    public static Response response;
-    public String requestBodyCreate;
-    public String requestBodyUpdate;
-    public int petId;
+    private static Response response;
+    private String requestBodyCreate;
+    private int petId;
 
 
     @Given("I have a PET with name {string}")
@@ -22,7 +21,7 @@ public class APIAutomationSteps {
         RestAssured.baseURI = "https://petstore.swagger.io/v2";
 
         // Build a Request payload for creation
-        requestBodyCreate = "{\"id\": 1, \"name\": \"" + petName + "\", \"status\": \"available\"}";
+        requestBodyCreate = "{\"id\": 1234321, \"name\": \"" + petName + "\", \"status\": \"available\"}";
     }
     @When("I create the PET")
     public void i_create_the_pet() {
@@ -38,13 +37,14 @@ public class APIAutomationSteps {
 
         //Fetch PetID
         petId = response.then().extract().path("id");
+        assertEquals(200, response.getStatusCode());
 
     }
     @When("I update the PET name to {string}")
     public void i_update_the_pet_name_to(String newPetName) {
 
         // Build the request payload for update
-        requestBodyUpdate = "{\"id\": " + petId + ", \"name\": \"" + newPetName + "\", \"status\": \"available\"}";
+        String requestBodyUpdate = "{\"id\": " + petId + ", \"name\": \"" + newPetName + "\", \"status\": \"available\"}";
 
         // Send the PUT request to update the pet name
         response = RestAssured.given()
