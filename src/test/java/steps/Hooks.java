@@ -11,12 +11,13 @@ import io.cucumber.java.Scenario;
 
 public class Hooks implements WebSocket.Listener {
 
-    @Override
+   /* @Override
     public void onError(Throwable throwable) {
         // Handle WebSocket error
         System.out.println("WebSocket error occurred: " + throwable.getMessage());
         // Implement custom error handling, e.g., retry mechanism, logging, etc.
-    }
+    }*/
+
 
     @Before
     public static void setUp() {

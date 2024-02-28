@@ -9,7 +9,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class HelperClass {
     private static HelperClass helperClass;
-
     private static WebDriver driver;
     public final static int TIMEOUT = 30;
 
