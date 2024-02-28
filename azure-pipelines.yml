@@ -14,14 +14,17 @@ trigger:
 pool:
   vmImage: windows-2022
 
-container: maven:3.9.6-jdk-17
+
+variables:
+  MAVEN_VERSION: '3.9.6'
+  JAVA_VERSION: '17'
 
 steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'path'
+    javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.17'
     jdkArchitectureOption: 'x64'
     publishJUnitResults: false
