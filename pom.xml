@@ -32,7 +32,7 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>${cucumber-junit}</version>
+            <version>7.15.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -93,7 +93,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager.version}</version>
+            <version>5.6.3</version>
         </dependency>
 
 
