@@ -2,12 +2,17 @@
 # Build your Java project and run tests with Apache Maven.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
+parameters:
+- name: Environment
+  displayName: 'Test'
+  type: string
+  default: 'Test'
 
 trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-2022
 
 steps:
 - task: Maven@3
@@ -20,3 +25,6 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
+
+
