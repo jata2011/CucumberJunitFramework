@@ -1,7 +1,9 @@
 package utils;
 
 import java.time.Duration;
-import java.util.logging.Logger;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -12,12 +14,16 @@ public class HelperClass {
     private static WebDriver driver;
     public final static int TIMEOUT = 30;
 
-    public static Logger log;
+    //public static Logger log;
+   // private static final Logger logger = LogManager.getLogger(RBANavMenuVerificationSteps.class);
+    public static final Logger logger = LogManager.getLogger(HelperClass.class);
 
 
     private HelperClass() {
 
-        log = Logger.getLogger(String.valueOf(HelperClass.class));
+      //  log = Logger.getLogger(String.valueOf(HelperClass.class));
+
+
 
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();

@@ -8,10 +8,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utils.HelperClass;
-import static utils.HelperClass.log;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import static utils.HelperClass.logger;
 
 
 public class RBANavMenuVerificationSteps {
+
+
 
     HomePageActions homePageActions = new HomePageActions();
     PaymentInfrastructurePageActions paymentInfrastructurePageActions = new PaymentInfrastructurePageActions();
@@ -23,15 +27,16 @@ public class RBANavMenuVerificationSteps {
     public void i_am_on_the_rba_website_homepage(String url){
         //temp
         String envValue = System.getenv("Environment");
-        log.info("envValue: " + envValue);
+        logger.info("envValue: " + envValue);
+        System.out.println("envValue: " + envValue);
         String configuredBrowser = ConfigFileReader.getProperty("browser");
         String configuredURL = ConfigFileReader.getProperty("testURL");
-        log.info("Configured browser: " + configuredBrowser);
-        log.info("Configured url: " + configuredURL);
+        logger.info("Configured browser: " + configuredBrowser);
+        logger.info("Configured url: " + configuredURL);
 
 
 
-        log.info("RBA Payment i_am_on_the_rba_website_homepage function  called");
+       // log.info("RBA Payment i_am_on_the_rba_website_homepage function  called");
         HelperClass.openPage(url);
     }
 
@@ -46,7 +51,7 @@ public class RBANavMenuVerificationSteps {
                 break;
             default:
                 //homePageActions.clickOnHomeReserveBankLogo();
-                log.info("i_click_on");
+                logger.info("i_click_on");
 
         }
     }
@@ -61,7 +66,7 @@ public class RBANavMenuVerificationSteps {
                 financialStabilityPageActions.assertFinancialStabilityHeader();
                 break;
             default:
-                log.info("i_verify_that_the_page_has_updated_information");
+                logger.info("i_verify_that_the_page_has_updated_information");
 
         }
 
@@ -77,7 +82,7 @@ public class RBANavMenuVerificationSteps {
                 financialStabilityPageActions.clickOnWhatIsFinancialStabilityLink();
                 break;
             default:
-                log.info("i_click_on_from_the_left_menu");
+                logger.info("i_click_on_from_the_left_menu");
 
         }
     }
@@ -95,7 +100,7 @@ public class RBANavMenuVerificationSteps {
                 financialStabilityPageActions.clickOnRoleOfReserveBankLink();
                 break;
             default:
-                log.info("i_click_on_from_the_on_this_page_list");
+                logger.info("i_click_on_from_the_on_this_page_list");
 
         }
 
@@ -110,7 +115,7 @@ public class RBANavMenuVerificationSteps {
                 financialStabilityPageActions.assertRoleOfReserveBankHeader();
                 break;
             default:
-                log.info("i_verify_that_i_am_taken_to_the_section");
+                logger.info("i_verify_that_i_am_taken_to_the_section");
 
         }
     }
