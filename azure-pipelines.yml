@@ -14,7 +14,7 @@ trigger:
 pool:
   vmImage: windows-2022
 
-container: maven:3.9.6-openjdk-17-slim
+container: maven:3.9.6-jdk-17
 
 steps:
 - task: Maven@3
@@ -24,7 +24,7 @@ steps:
     javaHomeOption: 'path'
     jdkVersionOption: '1.17'
     jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
+    publishJUnitResults: false
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
