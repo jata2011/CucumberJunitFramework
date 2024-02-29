@@ -34,5 +34,12 @@ steps:
    goals: 'package'
 - script: mvn test  # Run Maven tests
   displayName: 'Run Maven tests'
+- task: PublishMultipleCucumberReport@1
+  displayName: 'Publish Cucumber Report'
+  inputs:
+    jsonDir: target/reports/cucumber-reports/
+    outputPath: target/reports/cucumber-Html-Reports
+    name: 'RBA Framework - Cucumber Report'
+    title: Test Result
 
 
