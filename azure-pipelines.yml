@@ -8,6 +8,7 @@ parameters:
   type: string
   default: 'Test'
 
+
 trigger:
 - master
 
@@ -18,6 +19,7 @@ pool:
 variables:
   MAVEN_VERSION: '3.9.6'
   JAVA_VERSION: '17'
+   MY_VARIABLE: 'my_value'
 
 steps:
 - checkout: self  # Checkout the source code from the repository
@@ -32,7 +34,16 @@ steps:
    publishJUnitResults: false
    testResultsFiles: '**/surefire-reports/TEST-*.xml'
    goals: 'package'
+
 - script: mvn test  # Run Maven tests
   displayName: 'Run Maven tests'
 
 
+- task: PublishCucumberReport@1
+  inputs:
+    jsonDir: 'target/reports/cucumber-reports/'
+    outputPath: 'target/reports/cucumber-Html-Reports'
+    theme: 'bootstrap'
+    reportSuiteAsScenarios: true
+    name: 'RBA Framework - Cucumber Report'
+    title: Test Result
