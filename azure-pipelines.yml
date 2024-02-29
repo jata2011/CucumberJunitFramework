@@ -8,6 +8,7 @@ parameters:
   type: string
   default: 'Test'
 
+
 trigger:
 - master
 
@@ -20,16 +21,28 @@ variables:
   JAVA_VERSION: '17'
 
 steps:
+- checkout: self  # Checkout the source code from the repository
+
 - task: Maven@3
   inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.17'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: false
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+   mavenPomFile: 'pom.xml'
+   mavenOptions: '-Xmx3072m'
+   javaHomeOption: 'JDKVersion'
+   jdkVersionOption: '1.17'
+   jdkArchitectureOption: 'x64'
+   publishJUnitResults: false
+   testResultsFiles: '**/surefire-reports/TEST-*.xml'
+   goals: 'package'
+
+- script: mvn test  # Run Maven tests
+  displayName: 'Run Maven tests'
 
 
-
+- task: PublishCucumberReport@1
+  inputs:
+    jsonDir: 'target/reports/cucumber-reports/'
+    outputPath: 'target/reports/cucumber-Html-Reports'
+    theme: 'bootstrap'
+    reportSuiteAsScenarios: true
+    name: 'RBA Framework - Cucumber Report'
+    title: Test Result
