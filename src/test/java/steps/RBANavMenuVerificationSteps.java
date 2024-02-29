@@ -10,7 +10,8 @@ import io.cucumber.java.en.When;
 import utils.HelperClass;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import static utils.HelperClass.logger;
+
+import static utils.HelperClass.*;
 
 
 public class RBANavMenuVerificationSteps {
@@ -26,9 +27,9 @@ public class RBANavMenuVerificationSteps {
     @Given("I am on the RBA website homepage {string}")
     public void i_am_on_the_rba_website_homepage(String url){
         //temp
-        String envValue = System.getenv("Environment");
-        logger.info("envValue: " + envValue);
-        System.out.println("envValue: " + envValue);
+       // String envValue = System.getenv("Environment");
+        logger.info("env Value: " + environmentFromYAML);
+        //logger.info("my var: " + myvar);
         String configuredBrowser = ConfigFileReader.getProperty("browser");
         String configuredURL = ConfigFileReader.getProperty("testURL");
         logger.info("Configured browser: " + configuredBrowser);

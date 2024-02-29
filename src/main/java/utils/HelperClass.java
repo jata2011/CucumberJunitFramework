@@ -14,17 +14,15 @@ public class HelperClass {
     private static WebDriver driver;
     public final static int TIMEOUT = 30;
 
-    //public static Logger log;
-   // private static final Logger logger = LogManager.getLogger(RBANavMenuVerificationSteps.class);
+    public static String environmentFromYAML = null;
+    public static String myvar = null;
+
     public static final Logger logger = LogManager.getLogger(HelperClass.class);
 
 
     private HelperClass() {
-
-      //  log = Logger.getLogger(String.valueOf(HelperClass.class));
-
-
-
+        environmentFromYAML = System.getenv("Environment");
+      //  myvar = System.getenv("MY_VARIABLE");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));

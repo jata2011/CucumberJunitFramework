@@ -5,7 +5,6 @@ import java.util.Properties;
 
 public class ConfigFileReader {
 
-    private static final String ENVIRONMENT = null;
     private static Properties properties;
 
 
