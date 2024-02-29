@@ -36,6 +36,13 @@ steps:
 - script: mvn test  # Run Maven tests
   displayName: 'Run Maven tests'
 
+
+- task: NodeTool@0
+  displayName: 'Install Node 12.x'
+  inputs:
+    versionSpec: 12.x
+
+
 - task: PublishMultipleCucumberReport@1
   displayName: 'Publish Cucumber Report'
   inputs:
@@ -45,5 +52,4 @@ steps:
     reportSuiteAsScenarios: true
     name: 'RBA Framework - Cucumber Report'
     title: Test Result
-
 
