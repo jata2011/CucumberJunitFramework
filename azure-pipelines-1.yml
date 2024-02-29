@@ -33,3 +33,16 @@ steps:
    publishJUnitResults: false
    testResultsFiles: '**/surefire-reports/TEST-*.xml'
    goals: 'package'
+
+- script: mvn test  # Run Maven tests
+  displayName: 'Run Maven tests'
+
+
+- task: PublishCucumberReport@1
+  inputs:
+    jsonDir: 'target/reports/cucumber-reports/'
+    outputPath: 'target/reports/cucumber-Html-Reports'
+    theme: 'bootstrap'
+    reportSuiteAsScenarios: true
+    name: 'RBA Framework - Cucumber Report'
+    title: Test Result
