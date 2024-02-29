@@ -32,6 +32,7 @@ steps:
    publishJUnitResults: false
    testResultsFiles: '**/surefire-reports/TEST-*.xml'
    goals: 'package'
-
+- script: mvn test  # Run Maven tests
+  displayName: 'Run Maven tests'
 
 
