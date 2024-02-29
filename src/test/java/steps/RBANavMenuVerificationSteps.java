@@ -29,7 +29,6 @@ public class RBANavMenuVerificationSteps {
         //temp
        // String envValue = System.getenv("Environment");
         logger.info("env Value: " + environmentFromYAML);
-        //logger.info("my var: " + myvar);
         String configuredBrowser = ConfigFileReader.getProperty("browser");
         String configuredURL = ConfigFileReader.getProperty("testURL");
         logger.info("Configured browser: " + configuredBrowser);
