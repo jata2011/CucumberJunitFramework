@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/java/feature",
         glue={"steps"},
-        plugin = {"summary", "pretty", "html:target/reports/cucumber-reports.html",
+        plugin = {"summary", "pretty", "html:target/reports/cucumber-Html-Reports/cucumber-reports.html",
                 "json:target/reports/cucumber-reports/Report.json", //report.json is to get cucumber report in azure devops
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
@@ -18,4 +18,4 @@ import org.junit.runner.RunWith;
 
 public class CucumberRunnerTest {
 
-} 
+}
