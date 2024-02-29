@@ -8,6 +8,7 @@ parameters:
   type: string
   default: 'Test'
 
+
 trigger:
 - master
 
@@ -18,6 +19,7 @@ pool:
 variables:
   MAVEN_VERSION: '3.9.6'
   JAVA_VERSION: '17'
+   MY_VARIABLE: 'my_value'
 
 steps:
 - checkout: self  # Checkout the source code from the repository
