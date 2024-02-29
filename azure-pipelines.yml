@@ -32,9 +32,11 @@ steps:
    publishJUnitResults: false
    testResultsFiles: '**/surefire-reports/TEST-*.xml'
    goals: 'package'
+
 - script: mvn test  # Run Maven tests
   displayName: 'Run Maven tests'
-- task: PublishMultipleCucumberReport@1
+
+- task: PublishCucumberReport@1
   displayName: 'Publish Cucumber Report'
   inputs:
     jsonDir: target/reports/cucumber-reports/
