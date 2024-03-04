@@ -13,8 +13,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ado-selfhostedagent
-  #windows-2022 
+  vmImage: windows-2022 
 
 
 variables:
