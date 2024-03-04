@@ -9,7 +9,7 @@ import java.util.List;
 public class PaymentInfrastructurePageLocators {
 
 
-    @FindBy(how = How.XPATH, using = "//h1[contains(.,'Payments & Infrastructure')]")
+    @FindBy(how = How.XPATH, using = "//h1[contains(.,'Payments & Infrastructure1')]")  // original xpath : "//h1[contains(.,'Payments & Infrastructure')]"
     public WebElement paymentAndInfrastructureHeader;
 
 
