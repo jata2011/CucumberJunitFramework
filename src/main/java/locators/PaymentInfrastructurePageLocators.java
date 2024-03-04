@@ -9,15 +9,12 @@ import java.util.List;
 public class PaymentInfrastructurePageLocators {
 
 
-<<<<<<< HEAD
+
     @FindBy(how = How.XPATH, using = "//h1[contains(.,'Payments & Infrastructure')]")  // original xpath : "//h1[contains(.,'Payments & Infrastructure')]"
-=======
-    @FindBy(how = How.XPATH, using = "//h1[contains(.,'Payments & Infrastructure_1')]")  // original xpath : "//h1[contains(.,'Payments & Infrastructure')]"
->>>>>>> 7feb363f526440b3d4fa79a3c673d3cc7da819bb
     public WebElement paymentAndInfrastructureHeader;
 
 
-    @FindBy(how = How.XPATH, using ="//a[@href='/payments-and-infrastructure/payments-system_1.html']")
+    @FindBy(how = How.XPATH, using ="//a[@href='/payments-and-infrastructure/payments-system.html']")
     public WebElement paymentSystemLink;
 
 
