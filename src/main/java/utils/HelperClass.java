@@ -15,14 +15,13 @@ public class HelperClass {
     public final static int TIMEOUT = 30;
 
     public static String environmentFromYAML = null;
-    public static String myvar = null;
+    public static String varenvt;
 
     public static final Logger logger = LogManager.getLogger(HelperClass.class);
 
 
     private HelperClass() {
-        environmentFromYAML = System.getenv("Environment");
-      //  myvar = System.getenv("MY_VARIABLE");
+        varenvt = System.getenv("environmentFromYAML");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
