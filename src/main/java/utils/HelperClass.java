@@ -1,8 +1,6 @@
 package utils;
 
 import java.time.Duration;
-
-import jdk.internal.net.http.common.Utils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
