@@ -12,7 +12,7 @@ public class ConfigFileReader {
 
 
     static {
-          try (InputStream input = new FileInputStream("src/test/resources/config-"+ varenvt + ".properties")) {
+          try (InputStream input = new FileInputStream("src/test/resources/config-"+ "test" + ".properties")) {
             properties = new Properties();
             properties.load(input);
         } catch (IOException e) {

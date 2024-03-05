@@ -1,6 +1,8 @@
 package utils;
 
 import java.time.Duration;
+
+import lombok.Getter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +12,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class HelperClass {
     private static HelperClass helperClass;
+    @Getter
     private static WebDriver driver;
     public final static int TIMEOUT = 30;
 
@@ -32,11 +35,6 @@ public class HelperClass {
     public static void openPage(String url) {
 
         driver.get(url);
-    }
-
-    public static WebDriver getDriver() {
-
-        return driver;
     }
 
     public static void setUpDriver() {
