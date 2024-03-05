@@ -23,8 +23,6 @@ public class HelperClass {
 
 
     private HelperClass() {
-        varenvt = System.getenv("Environment");
-        logger.info("env Value: " + varenvt);
 
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
