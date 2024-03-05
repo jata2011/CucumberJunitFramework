@@ -3,12 +3,12 @@ package steps;
 import actions.FinancialStabilityPageActions;
 import actions.HomePageActions;
 import actions.PaymentInfrastructurePageActions;
-import dataProviders.ConfigFileReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utils.HelperClass;
 import static utils.HelperClass.*;
+import dataProviders.ConfigFileReader;
 
 
 public class RBANavMenuVerificationSteps {
@@ -23,17 +23,9 @@ public class RBANavMenuVerificationSteps {
 
     @Given("I am on the RBA website homepage {string}")
     public void i_am_on_the_rba_website_homepage(String url){
-      
-        logger.info("env Value: " + varenvt);
-        String configuredBrowser = ConfigFileReader.getProperty("browser");
-        String configuredURL = ConfigFileReader.getProperty("testURL");
-        logger.info("Configured browser: " + configuredBrowser);
-        logger.info("Configured url: " + configuredURL);
-
-
 
        // log.info("RBA Payment i_am_on_the_rba_website_homepage function  called");
-        HelperClass.openPage(url);
+       HelperClass.openPage(url);
     }
 
     @When("I click on {string}")
