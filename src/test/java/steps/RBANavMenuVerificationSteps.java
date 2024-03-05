@@ -13,13 +13,15 @@ import dataProviders.ConfigFileReader;
 
 public class RBANavMenuVerificationSteps {
 
+    public static String configuredBrowser;
+    public static String configuredURL;
+
+
 public RBANavMenuVerificationSteps(){
     varenvt = System.getenv("Environment");
-    logger.info("env Value in step definition: " + varenvt);
-    String configuredBrowser = ConfigFileReader.getProperty("browser");
-    String configuredURL = ConfigFileReader.getProperty("testURL");
-    logger.info("Configured browser: " + configuredBrowser);
-    logger.info("Configured url: " + configuredURL);
+    configuredBrowser = ConfigFileReader.getProperty("browser");
+    configuredURL = ConfigFileReader.getProperty("testURL");
+
 
 }
 
@@ -29,10 +31,12 @@ public RBANavMenuVerificationSteps(){
 
 
 
-    @Given("I am on the RBA website homepage {string}")
-    public void i_am_on_the_rba_website_homepage(String configuredURL){
-
-       HelperClass.openPage(configuredURL);
+    @Given("I am on the RBA website homepage")
+    public void iAmOnTheRBAWebsiteHomepage() {
+        logger.info("env Value in step definition: " + varenvt);
+        logger.info("Configured browser: " + configuredBrowser);
+        logger.info("Configured url: " + configuredURL);
+        HelperClass.openPage(configuredURL);
     }
 
     @When("I click on {string}")
