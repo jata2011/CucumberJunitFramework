@@ -1,0 +1,52 @@
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+parameters:
+- name: Environment1
+  displayName: 'Test'
+  type: string
+  default: 'Test2'
+
+
+trigger:
+- master
+
+pool:
+#  vmImage: windows-2022 
+  name: Default
+
+
+variables:
+  MAVEN_VERSION: '3.9.6'
+  JAVA_VERSION: '17'
+  Environment: 'dev'
+
+steps:
+- checkout: self  # Checkout the source code from the repository
+
+- task: Maven@3
+  inputs:
+   mavenPomFile: 'pom.xml'
+   mavenOptions: '-Xmx3072m'
+   javaHomeOption: 'JDKVersion'
+   jdkVersionOption: '1.17'
+   jdkArchitectureOption: 'x64'
+   publishJUnitResults: false
+   testResultsFiles: '**/surefire-reports/TEST-*.xml'
+   goals: 'package'
+
+- script: mvn test -DvarName=$(Environment)  # Run Maven tests
+  displayName: 'Run Maven tests'
+- script: echo $(Environment)
+  displayName: 'Echo Environment Value'
+
+
+- task: PublishCucumberReport@1
+  inputs:
+    jsonDir: 'target/reports/cucumber-reports/'
+    outputPath: 'target/reports/cucumber-Html-Reports'
+    theme: 'bootstrap'
+    reportSuiteAsScenarios: true
+    name: 'RBA Framework - Cucumber Report'
+    title: Test Result
