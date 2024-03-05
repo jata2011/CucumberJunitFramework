@@ -15,7 +15,7 @@ public class RBANavMenuVerificationSteps {
 
 public RBANavMenuVerificationSteps(){
     varenvt = System.getenv("Environment");
-    logger.info("env Value: " + varenvt);
+    logger.info("env Value in step definition: " + varenvt);
     String configuredBrowser = ConfigFileReader.getProperty("browser");
     String configuredURL = ConfigFileReader.getProperty("testURL");
     logger.info("Configured browser: " + configuredBrowser);
