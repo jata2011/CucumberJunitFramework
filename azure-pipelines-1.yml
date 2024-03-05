@@ -37,8 +37,8 @@ steps:
 
 - script: mvn test -DvarName=$(Environment)  # Run Maven tests
   displayName: 'Run Maven tests'
-- script: echo $(VAR_NAME)
-  displayName: 'Echo Variable Value'
+- script: echo $(Environment)
+  displayName: 'Echo Environment Value'
 
 
 - task: PublishCucumberReport@1
