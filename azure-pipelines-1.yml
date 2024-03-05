@@ -20,7 +20,7 @@ pool:
 variables:
   MAVEN_VERSION: '3.9.6'
   JAVA_VERSION: '17'
-  Environment: 'Test'
+  Environment: 'dev'
 
 steps:
 - checkout: self  # Checkout the source code from the repository

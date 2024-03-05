@@ -3,22 +3,24 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 parameters:
-- name: Environment
+- name: Environment1
   displayName: 'Test'
   type: string
-  default: 'Test'
+  default: 'Test2'
 
 
 trigger:
 - master
 
 pool:
-  vmImage: windows-2022
+#  vmImage: windows-2022 
+  name: Default
 
 
 variables:
   MAVEN_VERSION: '3.9.6'
   JAVA_VERSION: '17'
+  Environment: 'dev'
 
 steps:
 - checkout: self  # Checkout the source code from the repository
@@ -34,8 +36,10 @@ steps:
    testResultsFiles: '**/surefire-reports/TEST-*.xml'
    goals: 'package'
 
-- script: mvn test  # Run Maven tests
+- script: mvn test -DvarName=$(Environment)  # Run Maven tests
   displayName: 'Run Maven tests'
+- script: echo $(Environment)
+  displayName: 'Echo Environment Value'
 
 
 - task: PublishCucumberReport@1
