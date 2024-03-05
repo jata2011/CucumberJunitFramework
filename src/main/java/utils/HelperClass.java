@@ -21,7 +21,7 @@ public class HelperClass {
 
 
     private HelperClass() {
-        varenvt = System.getenv("environmentFromYAML");
+        varenvt = System.getProperty("Environment");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
