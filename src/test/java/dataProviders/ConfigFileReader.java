@@ -2,20 +2,10 @@ package dataProviders;
 
 import java.io.*;
 import java.util.Properties;
-import dataProviders.ConfigFileReader;
-import utils.HelperClass;
-
-import static utils.HelperClass.logger;
 import static utils.HelperClass.varenvt;
 
 
 public class ConfigFileReader {
-
-    public ConfigFileReader(){
-        varenvt = System.getenv("Environment");
-        logger.info("env Value: " + varenvt);
-
-    }
 
     private static Properties properties;
 
