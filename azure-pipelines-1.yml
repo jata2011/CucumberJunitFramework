@@ -3,10 +3,10 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 parameters:
-- name: Environment
+- name: Environment1
   displayName: 'Test'
   type: string
-  default: 'Test'
+  default: 'Test2'
 
 
 trigger:
@@ -20,6 +20,7 @@ pool:
 variables:
   MAVEN_VERSION: '3.9.6'
   JAVA_VERSION: '17'
+  Environment: 'Test'
 
 steps:
 - checkout: self  # Checkout the source code from the repository
