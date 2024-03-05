@@ -24,6 +24,13 @@ public class RBANavMenuVerificationSteps {
     @Given("I am on the RBA website homepage {string}")
     public void i_am_on_the_rba_website_homepage(String url){
 
+        varenvt = System.getenv("Environment");
+        logger.info("env Value: " + varenvt);
+        String configuredBrowser = ConfigFileReader.getProperty("browser");
+        String configuredURL = ConfigFileReader.getProperty("testURL");
+        logger.info("Configured browser: " + configuredBrowser);
+        logger.info("Configured url: " + configuredURL);
+
        // log.info("RBA Payment i_am_on_the_rba_website_homepage function  called");
        HelperClass.openPage(url);
     }

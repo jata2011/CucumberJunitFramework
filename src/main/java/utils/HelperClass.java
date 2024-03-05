@@ -23,15 +23,6 @@ public class HelperClass {
 
     private HelperClass() {
 
-        varenvt = System.getenv("Environment");
-        logger.info("env Value: " + varenvt);
-        String configuredBrowser = Utils.getProperty("browser");
-        String configuredURL = Utils.getProperty("testURL");
-        logger.info("Configured browser: " + configuredBrowser);
-        logger.info("Configured url: " + configuredURL);
-
-
-
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
