@@ -13,17 +13,6 @@ import dataProviders.ConfigFileReader;
 
 public class RBANavMenuVerificationSteps {
 
-    public static String configuredBrowser;
-    public static String configuredURL;
-
-
-public RBANavMenuVerificationSteps(){
-    varenvt = System.getenv("Environment");
-    configuredBrowser = ConfigFileReader.getProperty("browser");
-    configuredURL = ConfigFileReader.getProperty("testURL");
-
-
-}
 
     HomePageActions homePageActions = new HomePageActions();
     PaymentInfrastructurePageActions paymentInfrastructurePageActions = new PaymentInfrastructurePageActions();
@@ -33,6 +22,10 @@ public RBANavMenuVerificationSteps(){
 
     @Given("I am on the RBA website homepage")
     public void iAmOnTheRBAWebsiteHomepage() {
+        varenvt = "test";//System.getenv("Environment");
+        configuredBrowser = ConfigFileReader.getProperty("browser");
+        configuredURL = ConfigFileReader.getProperty("testURL");
+
         logger.info("env Value in step definition: " + varenvt);
         logger.info("Configured browser: " + configuredBrowser);
         logger.info("Configured url: " + configuredURL);

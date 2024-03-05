@@ -15,6 +15,8 @@ public class HelperClass {
     private static WebDriver driver;
     public final static int TIMEOUT = 30;
     public static String varenvt;
+    public static String configuredBrowser;
+    public static String configuredURL;
     public static final Logger logger = LogManager.getLogger(HelperClass.class);
 
 
