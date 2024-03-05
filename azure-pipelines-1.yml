@@ -35,7 +35,7 @@ steps:
    testResultsFiles: '**/surefire-reports/TEST-*.xml'
    goals: 'package'
 
-- script: mvn test  # Run Maven tests
+- script: mvn test -DvarName=$(Environment)  # Run Maven tests
   displayName: 'Run Maven tests'
 
 
