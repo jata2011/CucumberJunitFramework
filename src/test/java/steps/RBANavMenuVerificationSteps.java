@@ -14,24 +14,22 @@ import dataProviders.ConfigFileReader;
 public class RBANavMenuVerificationSteps {
 
 
-
     HomePageActions homePageActions = new HomePageActions();
     PaymentInfrastructurePageActions paymentInfrastructurePageActions = new PaymentInfrastructurePageActions();
     FinancialStabilityPageActions financialStabilityPageActions = new FinancialStabilityPageActions();
 
 
 
-    @Given("I am on the RBA website homepage {string}")
-    public void i_am_on_the_rba_website_homepage(String url){
-      //  varenvt = System.getenv("Environment");
-        //logger.info("env Value: " + varenvt);
-        String configuredBrowser = ConfigFileReader.getProperty("browser");
-        String configuredURL = ConfigFileReader.getProperty("testURL");
+    @Given("I am on the RBA website homepage")
+    public void iAmOnTheRBAWebsiteHomepage() {
+        varenvt = "test";//System.getenv("Environment");
+        configuredBrowser = ConfigFileReader.getProperty("browser");
+        configuredURL = ConfigFileReader.getProperty("testURL");
+
+        logger.info("env Value in step definition: " + varenvt);
         logger.info("Configured browser: " + configuredBrowser);
         logger.info("Configured url: " + configuredURL);
-
-       // log.info("RBA Payment i_am_on_the_rba_website_homepage function  called");
-       HelperClass.openPage(url);
+        HelperClass.openPage(configuredURL);
     }
 
     @When("I click on {string}")

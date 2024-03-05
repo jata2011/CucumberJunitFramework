@@ -1,7 +1,6 @@
 package utils;
 
 import java.time.Duration;
-
 import lombok.Getter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,16 +14,13 @@ public class HelperClass {
     @Getter
     private static WebDriver driver;
     public final static int TIMEOUT = 30;
-
-    public static String environmentFromYAML = null;
     public static String varenvt;
-
+    public static String configuredBrowser;
+    public static String configuredURL;
     public static final Logger logger = LogManager.getLogger(HelperClass.class);
 
 
     private HelperClass() {
-        varenvt = System.getenv("Environment");
-        logger.info("env Value: " + varenvt);
 
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
