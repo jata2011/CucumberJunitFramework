@@ -26,7 +26,7 @@ public class PaymentInfrastructurePageLocators {
     public WebElement OnThisDropDown;
 
 
-    @FindBy(how = How.XPATH, using ="//li[contains(.,'Cash')]")
+    @FindBy(how = How.XPATH, using ="//li[contains(.,'Cash1')]") //intentional failure
     public List<WebElement> paymentList;
 
 
