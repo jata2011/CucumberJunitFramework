@@ -37,13 +37,8 @@ public class PaymentInfrastructurePageActions {
     }
 
     public void assertNonCashHeader(){
-        try
-            {
-            Assert.notNull(paymentInfrastructurePageLocators.nonCashHeader,"Non Cash Header not displayed on Payments System page");
-            }catch (AssertionError e) {
-                logger.info("Assertion failed: " + e.getMessage());
-            }
-        
+        Assert.notNull(paymentInfrastructurePageLocators.nonCashHeader,"Non Cash Header not displayed on Payments System page");
+           
     }
 
 }
