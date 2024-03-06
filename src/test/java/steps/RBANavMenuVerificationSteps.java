@@ -14,7 +14,6 @@ import dataProviders.ConfigFileReader;
 public class RBANavMenuVerificationSteps {
 
 
-
     HomePageActions homePageActions = new HomePageActions();
     PaymentInfrastructurePageActions paymentInfrastructurePageActions = new PaymentInfrastructurePageActions();
     FinancialStabilityPageActions financialStabilityPageActions = new FinancialStabilityPageActions();
