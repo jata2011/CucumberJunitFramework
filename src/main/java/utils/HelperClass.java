@@ -14,7 +14,6 @@ public class HelperClass {
     private static HelperClass helperClass;
     private static WebDriver driver;
     public final static int TIMEOUT = 30;
-   // public static String environmentFromYAML = null;
     public static String varenvt;
     public static final Logger logger = LogManager.getLogger(HelperClass.class);
     public static String configuredBrowser;
