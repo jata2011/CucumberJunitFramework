@@ -23,13 +23,6 @@ public class RBANavMenuVerificationSteps {
 
     @Given("I am on the RBA website homepage")
     public void iAmOnTheRBAWebsiteHomepage() {
-        varenvt = System.getenv("Environment");
-        logger.info("env Value: " + varenvt);
-
-        String configuredBrowser = ConfigFileReader.getProperty("browser");
-        String configuredURL = ConfigFileReader.getProperty("testURL");
-        logger.info("Configured browser: " + configuredBrowser);
-        logger.info("Configured url: " + configuredURL);
         HelperClass.openPage(configuredURL);
     }
 
