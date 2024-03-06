@@ -1,5 +1,7 @@
+
 package steps;
 
+import dataProviders.ConfigFileReader;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -9,19 +11,16 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
-public class Hooks implements WebSocket.Listener {
+import static utils.HelperClass.*;
 
-   /* @Override
-    public void onError(Throwable throwable) {
-        // Handle WebSocket error
-        System.out.println("WebSocket error occurred: " + throwable.getMessage());
-        // Implement custom error handling, e.g., retry mechanism, logging, etc.
-    }*/
+public class Hooks implements WebSocket.Listener {
 
 
     @Before
     public static void setUp() {
-
+        varenvt = System.getenv("Environment");
+        configuredBrowser = ConfigFileReader.getProperty("browser");
+        configuredURL = ConfigFileReader.getProperty("testURL");
         HelperClass.setUpDriver();
     }
 
@@ -37,3 +36,4 @@ public class Hooks implements WebSocket.Listener {
         HelperClass.tearDown();
     }
 }
+

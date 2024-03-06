@@ -10,7 +10,6 @@ public class ConfigFileReader {
     private static Properties properties;
 
 
-
     static {
           try (InputStream input = new FileInputStream("src/test/resources/config-"+ varenvt + ".properties")) {
             properties = new Properties();

@@ -14,7 +14,7 @@ Feature: Verify RBA Payment and Infrastructure
     Examples:
      | topMenuItem               | subMenuItem                 | childSubMenuItem        |
      | Payments & Infrastructure | Payments System             | Non-cash Payments       |
-    # |https://www.rba.gov.au/ | Financial Stability       | What is Financial stability | Role of the Reserve Bank|
+     | Financial Stability       | What is Financial stability | Role of the Reserve Bank|
 
 
 #    Scenario: Search for a job "<jobsearch>"
