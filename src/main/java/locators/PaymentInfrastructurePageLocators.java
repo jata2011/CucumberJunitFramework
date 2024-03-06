@@ -30,7 +30,7 @@ public class PaymentInfrastructurePageLocators {
     public List<WebElement> paymentList;
 
 
-    @FindBy(how = How.XPATH, using ="//a[contains(.,'Non-cash Payments')]")  //intentional failure
+    @FindBy(how = How.XPATH, using ="//a[contains(.,'Non-cash Payments1')]")  //intentional failure
     public WebElement nonCashLink;
 
 
