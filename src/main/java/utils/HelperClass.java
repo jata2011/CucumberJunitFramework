@@ -38,11 +38,6 @@ public class HelperClass {
             default:
                 logger.info("No browser has been provided");
         }
-
-
-
-//        WebDriverManager.chromedriver().setup();
-  //      driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
         driver.manage().window().maximize();
     }
