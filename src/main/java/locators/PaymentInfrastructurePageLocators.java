@@ -34,7 +34,7 @@ public class PaymentInfrastructurePageLocators {
     public WebElement nonCashLink;
 
 
-    @FindBy(how = How.XPATH, using ="//h2[contains(.,'Non-cash Payments231')]") //intentional failure
+    @FindBy(how = How.XPATH, using ="//h2[contains(.,'Non-cash Payments')]") 
     public WebElement nonCashHeader;
 
 }
