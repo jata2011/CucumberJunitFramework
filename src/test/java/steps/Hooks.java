@@ -31,6 +31,7 @@ public class Hooks implements WebSocket.Listener {
         //validate if scenario has failed
         if(scenario.isFailed()) {
             final byte[] screenshot = ((TakesScreenshot) HelperClass.getDriver()).getScreenshotAs(OutputType.BYTES);
+           // scenario.attach(screenshot, "image/png", scenario.getName());
             scenario.attach(screenshot, "image/png", scenario.getName());
         }
 
