@@ -18,7 +18,7 @@ public class Hooks implements WebSocket.Listener {
 
     @Before
     public static void setUp() {
-        varenvt = System.getenv("Environment");
+        varenvt = "test";//System.getenv("Environment");
         configuredBrowser = ConfigFileReader.getProperty("browser");
         configuredURL = ConfigFileReader.getProperty("testURL");
         HelperClass.setUpDriver();
