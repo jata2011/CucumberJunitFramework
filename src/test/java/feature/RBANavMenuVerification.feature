@@ -4,7 +4,7 @@ Feature: Verify RBA Payment and Infrastructure
 # e.g. without Examples keyword
 
   Scenario Outline: Navigate RBA Payment and Infrastructure
-    Given I am on the RBA website homepage "<URL>"
+    Given I am on the RBA website homepage
     When I click on "<topMenuItem>"
     Then I verify that the page has updated information "topMenuItem"
     And I click on "<subMenuItem>" from the left menu
@@ -12,9 +12,9 @@ Feature: Verify RBA Payment and Infrastructure
     Then I verify that I am taken to the "<childSubMenuItem>" section
 
     Examples:
-     |URL                     | topMenuItem               | subMenuItem                 | childSubMenuItem        |
-     |https://www.rba.gov.au/ | Payments & Infrastructure | Payments System             | Non-cash Payments       |
-    # |https://www.rba.gov.au/ | Financial Stability       | What is Financial stability | Role of the Reserve Bank|
+     | topMenuItem               | subMenuItem                 | childSubMenuItem        |
+     | Payments & Infrastructure | Payments System             | Non-cash Payments       |
+     | Financial Stability       | What is Financial stability | Role of the Reserve Bank|
 
 
 #    Scenario: Search for a job "<jobsearch>"

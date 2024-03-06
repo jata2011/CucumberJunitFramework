@@ -10,7 +10,7 @@ public class PaymentInfrastructurePageLocators {
 
 
 
-    @FindBy(how = How.XPATH, using = "//h1[contains(.,'Payments & Infrastructure')]")  // original xpath : "//h1[contains(.,'Payments & Infrastructure')]"
+    @FindBy(how = How.XPATH, using = "//h1[contains(.,'Payments & Infrastructure')]")
     public WebElement paymentAndInfrastructureHeader;
 
 
@@ -26,11 +26,11 @@ public class PaymentInfrastructurePageLocators {
     public WebElement OnThisDropDown;
 
 
-    @FindBy(how = How.XPATH, using ="//li[contains(.,'Cash1')]") //intentional failure
+    @FindBy(how = How.XPATH, using ="//li[contains(.,'Cash')]")
     public List<WebElement> paymentList;
 
 
-    @FindBy(how = How.XPATH, using ="//a[contains(.,'Non-cash Payments')]")
+    @FindBy(how = How.XPATH, using ="//a[contains(.,'Non-cash Payments1')]")  //intentional failure
     public WebElement nonCashLink;
 
 
